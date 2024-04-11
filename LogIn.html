@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>LogIn</title>
+  </head>
+
+  
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+      <div class="container">
+     <!-- Logo -->
+        <a href="index.html" class="logo-link-button">
+          <img src="img/logo.png" alt="Logo">
+
+      </a>
+
+
+
+      </div>
+    </nav>
+
+
+
+
+    <!-- LogIn Box -->
+    <section
+      class="bg-dark text-light text-center " style="background: url('img/slider3.jpg'); height:1050px; display: flex;align-items: center;"
+    >
+      <div class="container d-flex justify-content-center" > 
+        <div class="row text-center g-4">
+        <div class="col-md">
+          <div class="card text-white wrapper" style=" top: -30%;max-width: 25rem ; background-color:transparent;backdrop-filter: blur(15px);">
+            <form>
+
+              <label class="form-label mt-4" for="form2Example1">Willkommen zurück, APEE!</label>
+
+
+                  <!-- DropDownMenu -->
+              <div class="dropdown form-outline mt-4  mb-4">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:transparent;width: 25rem ; border: 2px solid rgba(255,255,255,.5);">
+                  
+                </button>
+                <ul class="dropdown-menu">
+                  <li repeat="3"><a class="dropdown-item" href="#">Mitarbeiter 1</a></li>   <!-- repeat!! index = {index} -->
+
+                </ul>
+                <label class="form-label" for="form2Example1">Mitarbeiter</label>
+              </div>
+            
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form2Example2" class="form-control" style="background-color:transparent;  border: 2px solid rgba(255,255,255,.5);" />
+                <label class="form-label" for="form2Example2">Passwort</label>
+              </div>
+            
+              <!-- 2 column grid layout for inline styling -->
+              <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                  <!-- Checkbox -->
+
+                </div>
+
+              </div>
+            
+              <div class="d-grid gap-2 col-6 mx-auto">
+                
+              <a href="index.html" class="btn  btn-dark btn-block mb-4" role="button">Anmelden</a>
+              </div>
+
+              <!-- Submit button -->
+             
+
+            </form>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      let allElements = document.getElementsByTagName('*');
+      
+      Array.from(allElements).forEach(element => {
+          if(element.getAttribute('repeat')) {
+              repeatElement(element);
+              // console.log('Found Element', element, );
+          }
+      });
+      
+      
+      function repeatElement(element) {
+          for (let i = 0; i < element.getAttribute('repeat'); i++) {
+              const clone = element.outerHTML.replaceAll('{index}', i);
+              const node = createElementFromHTML(clone);
+              insertBefore(node, element)
+          }
+          element.remove();
+      }
+      
+      function insertBefore(newNode, referenceNode) {
+          referenceNode.parentNode.insertBefore(newNode, referenceNode);
+      }
+      
+      function createElementFromHTML(htmlString) {
+          var div = document.createElement('div');
+          div.innerHTML = htmlString.trim();  
+          return div.firstChild;
+        }
+        </script>
+  </body>
+</html>
