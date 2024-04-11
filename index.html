@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>APEE</title> 
+  </head>
+
+
+
+
+  <body style="background: url('img/slider8.jpg'); ">
+
+  <div class="container" style="background-color: rgb(255, 255, 255); margin-top: 20px;  display: flex;align-items: center;">
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+
+            <!-- APEE Logo -->
+            <a href="index.html" class="logo-link-button">
+              <img src="img/logo.png" alt="Logo">
+    
+          </a>
+
+          <!-- ToggleFenster Oben Rechts -->
+        <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="sidebar offcanvas offcanvas-start bg-dark text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="LogIn.html">LogOut</a>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+
+        
+
+      </div>
+    </nav>
+
+
+
+
+    <section class="p-5 text-dark "  >
+
+      <div class="desktop-content  ">
+            <!-- Willkommensrede-->
+        <h2 class="text-center mt-5 mb-5">Welcome Vorname Nachname</h2> 
+      
+      
+        <h2 class="mb-4">Costumer data</h2> 
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-1 mb-2">
+          <button class="btn btn-primary" type="button">+ add costumer</button>
+        </div>
+
+
+
+            <!-- Tabellenkopf -->
+
+        <div class="container border"  style="padding:0; padding-bottom: 0;" >
+        <table class="table table-bordered table-striped  custom-class">
+        <thead class="table-dark">
+       <tr>
+        <th scope="col" style="width: 10%">bank accounts </th>
+        <th scope="col" style="width: 10%" >ID</th>
+        <th scope="col" style="width: 25%">Email</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Birth Date</th>
+        <th scope="col">Phone Nummer</th>
+        
+
+        <th scope="col">Action</th>
+        </tr>
+        </thead>
+
+        </table>
+
+        </div>
+
+
+
+              <!-- Kundentabelle repeat="Anzahl_der_Zeilen"   i= {index}-->
+
+        <div class="container border" style="padding:0; padding-bottom: 0;" repeat="50" >  <!--repeat="Anzahl_der_Zeilen"   i= {index}-->
+      
+
+        <table class="table table-bordered table-striped  custom-class" >  
+
+        <tbody>
+          <tr class="table-secondary">
+            
+            <td style="width: 10%">
+            <button class="btn btn-dark  d-grid gap-2 col-6 mx-auto" style="width: 100%;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{index}" aria-expanded="false" aria-controls="collapseExample{index}">  <!-- repeat="Anzahl_der_Zeilen"   i= {index}-->
+              ↓
+            </button></td>
+
+            <th scope="row" style="width: 10%">{index}</th> <!--ID-->
+            <td style="width: 25%">(=ↀᆺↀ=)@gmeow.com</td>   <!--Email-->
+            <td>Markes</td>           <!--Name-->
+            <td>Van Hinten</td>
+            <td>06.09.1969</td> <!--Geburtstag-->
+            <td>01805 46 46</td> <!--Nummer-->
+            <td>
+
+              <a class="btn btn-outline-dark  d-grid gap-2 col-6 mx-auto" href="#" role="button" style="width: 100%;"> ⚙️</a>
+              </button></td>
+          </tr>
+
+        </tbody>
+
+
+
+        </table>
+        <!--Knopf zum aufklappen der Bankkonten des jeweiligen Kunden. Ein Kunde kann mehrere Bankkoten haben.-->
+        <div class="collapse" id="collapseExample{index}">
+                <!--Tabellenkopf Bankkonten-->
+                  <table class="table table-bordered table-striped  custom-class">
+                    <thead class="table-info">
+                      <tr>
+                        <th scope="col">AccountID</th>
+                        <th scope="col">IBAN</th>
+                        <th scope="col">Balance</th>
+                        <th scope="col">Creditcard Number</th>
+                        <th scope="col">Cvv</th>
+            
+                        <th scope="col">PIN</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+            
+                  </table>
+                  <table class="table table-bordered  custom-class"   repeat2="5">     <!--abhaengig von der Anzahl von Konten des Kunden-->
+
+                    <tbody >
+                      <tr >
+
+                        <th scope="col">{index2}</th> <!--ID-->
+                        <td>DE 69696969 69</td> <!--Nummer-->
+                        <td>-9999999,69 €</td>           <!--Email-->
+                        <td>66669999</td>           <!--Name-->
+                        <td>69</td>
+                        <td>6969</td> <!--Geburtstag-->
+                        <td>
+
+                          <a class="btn btn-outline-dark  d-grid gap-2 col-6" href="#" role="button" style="width: 100%"> ⚙️ </a>
+                          </button></td>
+                      </tr>
+
+                    </tbody>
+            
+            
+            
+                  </table>
+      </div>
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+<script> //Testscript 
+const hello_there = "Hallo, Welt!";
+  const blab = ['hi'];
+ const costumerID = [555555555, 3333333333, 88888888888];
+ const eMail = ['aaaaaa@mail', 'bbbb@mail', 'bbbb@mail'];
+ const lastName = ['aaaaaaman', 'bbbbbman','ccccccman'];
+ const firstName = ['aaaaa', 'bbbbbbbb', 'cccccccc'];
+ const tel = ['55555111111', '333311111', '8888881111'];
+ const birthDate = ['05.05.2005', '03.03.2003', '08.08.2008'];
+
+</script>
+
+
+   <!--Bootstrap Skript-->
+    <script 
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+
+
+
+     <!--Iterator Skript-->
+
+    <script>
+let allElements = document.getElementsByTagName('*');
+
+Array.from(allElements).forEach(element => {
+    if(element.getAttribute('repeat')) {
+        repeatElement(element);
+        // console.log('Found Element', element, );
+    }
+});
+
+
+function repeatElement(element) {
+    for (let i = 0; i < element.getAttribute('repeat'); i++) {
+        const clone = element.outerHTML.replaceAll('{index}', i);
+        const node = createElementFromHTML(clone);
+        insertBefore(node, element)
+    }
+    element.remove();
+}
+
+function insertBefore(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode);
+}
+
+function createElementFromHTML(htmlString) {
+    var div = document.createElement('div');
+    div.innerHTML = htmlString.trim();  
+    return div.firstChild;
+  }
+    </script>
+
+
+
+         <!--Iterator Skript2-->
+    <script>
+  let allElements2 = document.getElementsByTagName('*');
+  
+  Array.from(allElements2).forEach(element => {
+      if(element.getAttribute('repeat2')) {
+          repeatElement(element);
+          // console.log('Found Element', element, );
+      }
+  });
+  
+  
+  function repeatElement(element) {
+      for (let i = 0; i < element.getAttribute('repeat2'); i++) {
+          const clone = element.outerHTML.replaceAll('{index2}', i);
+          const node = createElementFromHTML(clone);
+          insertBefore(node, element)
+      }
+      element.remove();
+  }
+  
+  function insertBefore(newNode, referenceNode) {
+      referenceNode.parentNode.insertBefore(newNode, referenceNode);
+  }
+  
+  function createElementFromHTML(htmlString) {
+      var div = document.createElement('div');
+      div.innerHTML = htmlString.trim();  
+      return div.firstChild;
+    }
+    </script>
+
+  </body>
+
+
+
+
+
+  
+</html>
